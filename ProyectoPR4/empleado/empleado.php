@@ -24,14 +24,14 @@ include("../include/conexion.php");
  </div>
   <div class="col-md-8">
   	<div class="panel panel-default">
-  <div class="panel-heading">Usuario</div>
+  <div class="panel-heading">Empleado</div>
   <div class="panel-body">
-  <div><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Crear Usuario</button></div>
+  <div><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Crear Empleado</button></div>
   <table class="table">
   
   <?php 
 
-$result= mysql_query("select  p.idpersona,p.nombre,p.Snombre, p.apellido, p.Sapellido, p.telefono,p.documento from persona as p inner join login as l on p.login_idlogin=l.idlogin inner join rol as r on l.rol_idrol=r.idrol where r.idrol=1");
+$result= mysql_query("select  p.idpersona,p.nombre,p.Snombre, p.apellido, p.Sapellido, p.telefono,p.documento from persona as p inner join login as l on p.login_idlogin=l.idlogin inner join rol as r on l.rol_idrol=r.idrol where r.idrol=2");
 while ($row=mysql_fetch_array($result)) {
 
 ?>
@@ -43,11 +43,11 @@ while ($row=mysql_fetch_array($result)) {
   <td><?php echo$row["Sapellido"]  ?></td>
   <td><?php echo$row["telefono"]  ?></td>
    <td><?php echo$row["documento"]  ?></td>
- <td><form  id="updateCita" method="GET" action="updateusuario.php ">
+ <td><form  id="updateCita" method="GET" action="updateempleado.php ">
 <input type="hidden" name="codigo"  id="codigo" value="<?php echo$row["idpersona"]  ?>" >
 <input type="submit" name="cmdguardar" class="btn btn-link" value="Consulta" POST="SUMIT"/>
 </form></td> 
- <td><form   method="POST" action="deleUsuario.php ">
+ <td><form   method="POST" action="deleempleado.php ">
 <input type="hidden" name="codigo"  id="codigo" value="<?php echo$row["idpersona"]  ?>" >
 <input type="submit" name="cmdguardar" class="btn btn-link" value="Eliminar" POST="SUMIT"/>
 </form></td> 
@@ -94,7 +94,7 @@ mysql_query($sql2) or die(mysql_error());
 
 
    ?>
-   <h2>Crear Usuario</h2>
+   <h2>Crear Empleado</h2>
    <form action="" method="POST">
   <div class="row">
   <div class="col-xs-6"><label>nombre</label></div>

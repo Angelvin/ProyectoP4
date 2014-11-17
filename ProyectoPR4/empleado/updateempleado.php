@@ -30,7 +30,7 @@ $VVALOR=$_GET['idclie'];
 
   $sql="UPDATE persona SET  nombre='$NOMBRE', Snombre='$sNOMBRE',apellido='$Apellido', Sapellido='$Sapellid',telefono='$tele',documento='$docu' where idpersona=$VVALOR";
   $query=mysql_query($sql) or die(mysql_error());
- header("Location: usuario.php");
+ header("Location: empleado.php");
   }else{
    
   }

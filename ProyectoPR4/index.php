@@ -10,7 +10,7 @@ if (isset($_POST['action'])) {
             $_SESSION['userid'] = $row{'usuario'};
             $valor=$row{'rol_idrol'};
             if ($valor==1) {
-                header("Location:tabla.php"); /* Si el usuario existe, direccionar a la pagina princial( catalogo) */
+                header("Location:empleado/usuario.php"); /* Si el usuario existe, direccionar a la pagina princial( catalogo) */
             }elseif ($valor==2) {
                header("Location:inicio.php");
             }
