@@ -1,4 +1,5 @@
 <?php
+session_start();
 include ("include/conexion.php");
 if (isset($_POST['action'])) {
     $username = $_POST['username'];

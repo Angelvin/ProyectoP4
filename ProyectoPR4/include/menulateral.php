@@ -7,9 +7,11 @@
 </head>
 <body>
 <ul class="nav nav-pills nav-stacked">
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
+  <li role="presentation" class="active"> <a href="../empleado/usuario.php">Usuario</a></li>
+  <li role="presentation"><a href="../empleado/empleado.php">Empleado</a></li>
+  <li role="presentation" ><a href="../empleado/priorida.php">Priorida</a></li>
+  <li role="presentation"><a href="../empleado/problema.php">Problema</a></li>
+
 </ul>
 </body>
 </html>

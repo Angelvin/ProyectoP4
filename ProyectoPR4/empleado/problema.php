@@ -40,7 +40,10 @@ while ($row=mysql_fetch_array($result)) {
   <td><?php echo$row["idproblema"]  ?></td>
   <td><?php echo$row["nombreProblema"]  ?></td>
  
- 
+ <td><form  id="updateCita" method="GET" action="actualizarproblema.php ">
+<input type="hidden" name="codigo"  id="codigo" value="<?php echo$row["idproblema"]  ?>" >
+<input type="submit" name="cmdguardar" class="btn btn-link" value="Consulta" POST="SUMIT"/>
+</form></td> 
  <td><form   method="POST" action="deleproblema.php ">
 <input type="hidden" name="codigo"  id="codigo" value="<?php echo$row["idproblema"]  ?>" >
 <input type="submit" name="cmdguardar" class="btn btn-link" value="Eliminar" POST="SUMIT"/>
