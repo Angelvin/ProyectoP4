@@ -23,7 +23,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="../empleado/usuario.php">Usuario <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="../empleado/console.php">Consola<span class="sr-only">(current)</span></a></li>
+        <li><a href="../empleado/usuario.php">Usuario</a></li>
         <li><a href="../empleado/empleado.php">Empleado</a></li>
         <li><a href="../empleado/priorida.php">Priorida</a></li>
         <li><a href="../empleado/problema.php">Problema</a></li>
