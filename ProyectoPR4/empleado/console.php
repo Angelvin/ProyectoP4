@@ -7,7 +7,9 @@
 </head>
 <body>
 <?php
+
 include("../include/menu.php");
+
 ?>
 <div class="row">
  <div class="col-md-2">
@@ -62,8 +64,8 @@ while ($row=mysql_fetch_array($result)) {
 <input type="hidden" name="codigo"  id="codigo" value="<?php echo$row["iddetalleTicket"]  ?>" >
 <input type="submit" name="cmdguardar" class="btn btn-link" value="Detalles" POST="SUMIT"/>
 </form></td> 
-<td><form  id="updateCita" method="GET" action="destelleconsole.php ">
-<input type="hidden" name="codigo"  id="codigo" value="<?php echo$row["iddetalleTicket"]  ?>" >
+<td><form  id="updateCita" method="GET" action="actuaconsola.php ">
+<input type="hidden" name="codigo"  id="codigo" value="<?php echo$row["idticket"]  ?>" >
 <input type="submit" name="cmdguardar" class="btn btn-link" value="Revisar" POST="SUMIT"/>
 </form></td> 
 </tr>

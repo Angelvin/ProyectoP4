@@ -37,8 +37,14 @@
         <li><a href="#"><?php
         session_start();
         include ("../include/conexion.php");
+if (!empty($_SESSION['userid'])) {
+    echo "Bienvenido ".$_SESSION['userid'];
+     echo '<a href="../logout.php" class="logout"><span class="glyphicon glyphicon-log-out"></span> Cerra Sesion</a>';
+} else {
+    //header("Location: logon.php"); /* Redirect browser */
+    header("Location: ../index.php"); /* Redirect browser */
+}
 
-echo "Bienvenido ".$_SESSION['userid'];
         ?></a></li>
         
       </ul>

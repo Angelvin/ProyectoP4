@@ -5,10 +5,11 @@ if (isset($_POST['action'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     if (isset($username) && !empty($password)) {
-        $query = mysql_query("SELECT usuario, password, rol_idrol FROM `login` where usuario='$username' and password='$password'");
+        $query = mysql_query("select   p.idpersona ,l.usuario, l.password, l.rol_idrol FROM login as l inner join persona as p on p.login_idlogin=l.idlogin  where l.usuario='$username' and l.password='$password'");
         while ($row = mysql_fetch_array($query)) {
             session_start();
             $_SESSION['userid'] = $row{'usuario'};
+             $_SESSION['iduse']=$row{'idpersona'};
             $valor=$row{'rol_idrol'};
             if ($valor==1) {
                 header("Location:empleado/usuario.php"); /* Si el usuario existe, direccionar a la pagina princial( catalogo) */
