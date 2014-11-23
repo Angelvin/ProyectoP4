@@ -20,7 +20,7 @@ $query=mysql_query($sql) or die(mysql_error());
 mysql_query($sql2) or die(mysql_error());
  } else {
    # error
-  echo "No Registrado";
+  echo "No Registrado ....Prueba";
  }
  
 
