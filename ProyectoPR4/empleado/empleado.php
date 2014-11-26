@@ -47,10 +47,7 @@ while ($row=mysql_fetch_array($result)) {
 <input type="hidden" name="codigo"  id="codigo" value="<?php echo$row["idpersona"]  ?>" >
 <input type="submit" name="cmdguardar" class="btn btn-link" value="Consulta" POST="SUMIT"/>
 </form></td> 
- <td><form   method="POST" action="deleempleado.php ">
-<input type="hidden" name="codigo"  id="codigo" value="<?php echo$row["idpersona"]  ?>" >
-<input type="submit" name="cmdguardar" class="btn btn-link" value="Eliminar" POST="SUMIT"/>
-</form></td> 
+
 </tr>
 <?php
 } 
@@ -65,37 +62,9 @@ while ($row=mysql_fetch_array($result)) {
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-       <?php
-
-if (isset($_POST['Enviar'])) {
- $valor=1;
-  $sql="INSERT INTO login(usuario, password, rol_idrol) values ('{$_POST['usuario']}','{$_POST['password']}', '$valor')";
- 
-  
-$query=mysql_query($sql) or die(mysql_error());
- $id = mysql_insert_id($conexion); 
- if ($id>0) {
-   # regreso de id de insersion en la tabla
-  $sql2="INSERT INTO persona(nombre,Snombre,apellido,Sapellido,telefono,documento, login_idlogin,departamento_iddepartamento)  VALUES('{$_POST['nombre']}','{$_POST['Snombre']}','{$_POST['apellido']}','{$_POST['Sapellido']}','{$_POST['telefono']}','{$_POST['documento']}','$id','{$_POST['departamento']}')";
-   echo "Registro completo";
-mysql_query($sql2) or die(mysql_error());
- } else {
-   # error
-  echo "No Registrado";
- }
- 
-
-} else {
-  # code...
- // echo "No registrado";
-}
-
- 
-
-
-   ?>
+   
    <h2>Crear Empleado</h2>
-   <form action="" method="POST">
+   <form action="insertempleado.php" method="POST">
   <div class="row">
   <div class="col-xs-6"><label>nombre</label></div>
   <div class="col-xs-6"><input type="text"  id="nombre"  name="nombre" class="form-control"  ></div>

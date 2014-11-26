@@ -47,10 +47,6 @@ while ($row=mysql_fetch_array($result)) {
 <input type="hidden" name="codigo"  id="codigo" value="<?php echo$row["idpersona"]  ?>" >
 <input type="submit" name="cmdguardar" class="btn btn-link" value="Consulta" POST="SUMIT"/>
 </form></td> 
- <td><form   method="POST" action="deleUsuario.php ">
-<input type="hidden" name="codigo"  id="codigo" value="<?php echo$row["idpersona"]  ?>" >
-<input type="submit" name="cmdguardar" class="btn btn-link" value="Eliminar" POST="SUMIT"/>
-</form></td> 
 </tr>
 <?php
 } 
@@ -65,60 +61,32 @@ while ($row=mysql_fetch_array($result)) {
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-       <?php
-
-if (isset($_POST['Enviar'])) {
- $valor=2;
-  $sql="INSERT INTO login(usuario, password, rol_idrol) values ('{$_POST['usuario']}','{$_POST['password']}', '$valor')";
- 
-  
-$query=mysql_query($sql) or die(mysql_error());
- $id = mysql_insert_id($conexion); 
- if ($id>0) {
-   # regreso de id de insersion en la tabla
-  $sql2="INSERT INTO persona(nombre,Snombre,apellido,Sapellido,telefono,documento, login_idlogin,departamento_iddepartamento)  VALUES('{$_POST['nombre']}','{$_POST['Snombre']}','{$_POST['apellido']}','{$_POST['Sapellido']}','{$_POST['telefono']}','{$_POST['documento']}','$id','{$_POST['departamento']}')";
-   echo "Registro completo";
-mysql_query($sql2) or die(mysql_error());
- } else {
-   # error
-  echo "No Registrado";
- }
- 
-
-} else {
-  # code...
- // echo "No registrado";
-}
-
- 
-
-
-   ?>
+   
    <h2>Crear Usuario</h2>
-   <form action="" method="POST">
+   <form action="insertUsuario.php" method="POST">
   <div class="row">
   <div class="col-xs-6"><label>nombre</label></div>
-  <div class="col-xs-6"><input type="text"  id="nombre"  name="nombre" class="form-control"  ></div>
+  <div class="col-xs-6"><input type="text"  id="nombre"  name="nombre"  class="form-control" pattern="|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|"  required / ></div>
 </div>
 <div class="row">
   <div class="col-xs-6"><label>segundo nombre</label></div>
-  <div class="col-xs-6"><input type="text" id="Snombre" name="Snombre"  class="form-control" ></div>
+  <div class="col-xs-6"><input type="text" id="Snombre" name="Snombre"  class="form-control" pattern="|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|" required / ></div>
 </div>
 <div class="row">
   <div class="col-xs-6"><label>apellido</label></div>
-  <div class="col-xs-6"><input type="text" name="apellido"  class="form-control" ></div>
+  <div class="col-xs-6"><input type="text" name="apellido"  class="form-control" pattern="|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|" required / ></div>
 </div>
 <div class="row">
   <div class="col-xs-6"><label>apellido segundo</label></div>
-  <div class="col-xs-6"><input type="text" name="Sapellido"  class="form-control" ></div>
+  <div class="col-xs-6"><input type="text" name="Sapellido"  class="form-control" pattern="|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|" required / ></div>
 </div>
 <div class="row">
   <div class="col-xs-6"><label>telefono</label></div>
-  <div class="col-xs-6"><input type="text" name="telefono"  class="form-control" ></div>
+  <div class="col-xs-6"><input type="text" name="telefono"  class="form-control"  pattern="[0-9]{8}$" required /></div>
 </div>
 <div class="row">
   <div class="col-xs-6"><label>Documento</label></div>
-  <div class="col-xs-6"><input type="text" name="documento"  class="form-control" ></div>
+  <div class="col-xs-6"><input type="text" name="documento"  class="form-control" pattern="[0-9]"/></div>
 </div>
 <div class="row">
   <div class="col-xs-6"><label>Departamento</label></div>
@@ -132,11 +100,11 @@ mysql_query($sql2) or die(mysql_error());
   <div class="panel-body">
   <div class="row">
   <div class="col-xs-6"><label>Usuario</label></div>
-  <div class="col-xs-6"><input type="text" id="usuario" name="usuario" class="form-control" ></div>
+  <div class="col-xs-6"><input type="text" id="usuario" name="usuario" class="form-control" pattern="^[A-z0-9]{3,15}$" ></div>
 </div>
 <div class="row">
   <div class="col-xs-6"><label>Contraseña</label></div>
-  <div class="col-xs-6"><input type="text" id="password" name="password"class="form-control" ></div>
+  <div class="col-xs-6"><input type="text" id="password" name="password"class="form-control"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15})" required/></div>
   <input type='hidden' value='1' name='Enviar' />
   <input type='submit' class="btn btn-primary btn-lg" value='Guardar' />
 </div>

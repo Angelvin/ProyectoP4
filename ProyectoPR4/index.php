@@ -94,7 +94,7 @@ if (isset($_POST['action'])) {
                         <fieldset>
                             <div class="form-group">
 
-                                <legend><center><h3>Login cliente</h3></center></legend>
+                                <legend><center><h3>LOGIN</h3></center></legend>
                                 <br>
                                 <div class="form-group">
                                     <label  class="col-lg-3 control-label" for="username">Username</label>

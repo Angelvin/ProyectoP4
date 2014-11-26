@@ -44,10 +44,7 @@ while ($row=mysql_fetch_array($result)) {
 <input type="hidden" name="codigo"  id="codigo" value="<?php echo$row["idproblema"]  ?>" >
 <input type="submit" name="cmdguardar" class="btn btn-link" value="Consulta" POST="SUMIT"/>
 </form></td> 
- <td><form   method="POST" action="deleproblema.php ">
-<input type="hidden" name="codigo"  id="codigo" value="<?php echo$row["idproblema"]  ?>" >
-<input type="submit" name="cmdguardar" class="btn btn-link" value="Eliminar" POST="SUMIT"/>
-</form></td> 
+
 </tr>
 <?php
 } 
@@ -62,27 +59,9 @@ while ($row=mysql_fetch_array($result)) {
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-       <?php
-
-if (isset($_POST['Enviar'])) {
- 
-  $sql="INSERT INTO problema(nombreProblema) values ('{$_POST['nombre']}')";
- 
-  
-$query=mysql_query($sql) or die(mysql_error());
- 
-
-} else {
-  # code...
- // echo "No registrado";
-}
-
- 
-
-
-   ?>
+       
    <h2>Crear Problema</h2>
-   <form action="" method="POST">
+   <form action="insertproblema.php" method="POST">
   <div class="row">
   <div class="col-xs-6"><label>Nombre de problema</label></div>
   <div class="col-xs-6"><input type="text"  id="nombre"  name="nombre" class="form-control"  ></div>
