@@ -31,7 +31,7 @@ include("../include/conexion.php");
   
   <?php 
 
-$result= mysql_query("select  p.idpersona,p.nombre,p.Snombre, p.apellido, p.Sapellido, p.telefono,p.documento from persona as p inner join login as l on p.login_idlogin=l.idlogin inner join rol as r on l.rol_idrol=r.idrol where r.idrol=1");
+$result= mysql_query("select  p.idpersona,p.nombre,p.Snombre, p.apellido, p.Sapellido, p.telefono,p.documento from persona as p inner join login as l on p.login_idlogin=l.idlogin inner join rol as r on l.rol_idrol=r.idrol where r.idrol=2");
 while ($row=mysql_fetch_array($result)) {
 
 ?>
@@ -68,7 +68,7 @@ while ($row=mysql_fetch_array($result)) {
        <?php
 
 if (isset($_POST['Enviar'])) {
- $valor=1;
+ $valor=2;
   $sql="INSERT INTO login(usuario, password, rol_idrol) values ('{$_POST['usuario']}','{$_POST['password']}', '$valor')";
  
   

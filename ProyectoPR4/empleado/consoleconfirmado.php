@@ -23,10 +23,10 @@ include("../include/menulateral.php")
  </div>
   <div class="col-md-8">
   	<div class="panel panel-default">
-  <div class="panel-heading">Consola</div>
+  <div class="panel-heading">Confirmados</div>
   <div class="panel-body">
 
-  <a href="consoleconfirmado.php">Ver Confirmado </a>
+ 
 
 
   <table class="table">
@@ -39,8 +39,7 @@ include("../include/menulateral.php")
   <td>Estado</td>
   <td>nombre Priorida</td>
   <td>Nombre problemas</td>
- <td>ver detalle</td>
-  <td>Checar de revisado</td>
+
 
 </tr>
   <?php 
@@ -52,7 +51,7 @@ inner join ticket as tic on p.idpersona=tic.persona_idpersona
 inner join detalleticket as dtic on dtic.iddetalleTicket=tic.detalleTicket_iddetalleTicket
 inner join estadoticket as stic on stic.idestadoTicket=tic.estadoTicket_idestadoTicket
 inner join priorida as prio on prio.idpriorida=tic.priorida_idpriorida
-inner join problema as pro on pro.idproblema=tic.problema_idproblema where tic.fechaCreacion=CURDATE() and idempleado is null  group by d.iddepartamento ASC") ;
+inner join problema as pro on pro.idproblema=tic.problema_idproblema where  idempleado>0 group by d.iddepartamento ASC") ;
 while ($row=mysql_fetch_array($result)) {
 
 ?>
@@ -67,14 +66,7 @@ while ($row=mysql_fetch_array($result)) {
    <td><?php echo$row["estado"]  ?></td>
    <td><?php echo$row["nombreprio"]  ?></td>
    <td><?php echo$row["nombreProblema"]  ?></td>
- <td><form  id="updateCita" method="GET" action="destelleconsole.php ">
-<input type="hidden" name="codigo"  id="codigo" value="<?php echo$row["iddetalleTicket"]  ?>" >
-<input type="submit" name="cmdguardar" class="btn btn-link" value="Detalles" POST="SUMIT"/>
-</form></td> 
-<td><form  id="updateCita" method="GET" action="actuaconsola.php ">
-<input type="hidden" name="codigo"  id="codigo" value="<?php echo$row["idticket"]  ?>" >
-<input type="submit" name="cmdguardar" class="btn btn-link" value="Revisar" POST="SUMIT"/>
-</form></td> 
+
 </tr>
 <?php
 } 
