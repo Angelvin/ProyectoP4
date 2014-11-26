@@ -26,7 +26,7 @@ include("../include/conexion.php");
   	<div class="panel panel-default">
   <div class="panel-heading">Priorida</div>
   <div class="panel-body">
-  <div><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Crear Usuario</button></div>
+  <div><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Crear Priorida</button></div>
   <table class="table">
   
   <?php 
@@ -71,7 +71,7 @@ if (isset($_POST['Enviar'])) {
   
 $query=mysql_query($sql) or die(mysql_error());
  
-
+header("Location: ../empleado/priorida.php");
 } else {
   # code...
  // echo "No registrado";

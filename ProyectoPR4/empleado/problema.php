@@ -24,9 +24,9 @@ include("../include/conexion.php");
  </div>
   <div class="col-md-8">
   	<div class="panel panel-default">
-  <div class="panel-heading">Priorida</div>
+  <div class="panel-heading">Problema</div>
   <div class="panel-body">
-  <div><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Crear Usuario</button></div>
+  <div><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Crear problema</button></div>
   <table class="table">
   
   <?php 

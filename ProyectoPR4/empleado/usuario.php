@@ -76,7 +76,7 @@ $query=mysql_query($sql) or die(mysql_error());
  $id = mysql_insert_id($conexion); 
  if ($id>0) {
    # regreso de id de insersion en la tabla
-  $sql2="INSERT INTO persona(nombre,Snombre,apellido,Sapellido,telefono,documento, login_idlogin,departamento_iddepartamento)  VALUES('{$_POST['nombre']}','{$_POST['Snombre']}','{$_POST['apellido']}','{$_POST['Sapellido']}','{$_POST['telefono']}','{$_POST['documento']}','$id','$valor')";
+  $sql2="INSERT INTO persona(nombre,Snombre,apellido,Sapellido,telefono,documento, login_idlogin,departamento_iddepartamento)  VALUES('{$_POST['nombre']}','{$_POST['Snombre']}','{$_POST['apellido']}','{$_POST['Sapellido']}','{$_POST['telefono']}','{$_POST['documento']}','$id','{$_POST['departamento']}')";
    echo "Registro completo";
 mysql_query($sql2) or die(mysql_error());
  } else {
@@ -137,13 +137,10 @@ mysql_query($sql2) or die(mysql_error());
 <div class="row">
   <div class="col-xs-6"><label>Contraseña</label></div>
   <div class="col-xs-6"><input type="text" id="password" name="password"class="form-control" ></div>
-</div>
-<div class="row">
-  <div class="col-xs-6"><label>Repetir Contraseña</label></div>
-  <div class="col-xs-6"><input type="text" class="form-control" ></div>
   <input type='hidden' value='1' name='Enviar' />
   <input type='submit' class="btn btn-primary btn-lg" value='Guardar' />
 </div>
+
   </div>
 </div>
 

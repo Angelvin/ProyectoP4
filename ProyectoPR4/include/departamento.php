@@ -12,7 +12,7 @@ while ($row = mysql_fetch_array($result)) {
         $row[$key] = stripslashes($value);
     }
     echo "<option";
-    $value = $row['nombreDepa'];
+    $value = $row['iddepartamento'];
     echo " value=$value>" . nl2br($row['nombreDepa']);
     echo "</option>";
 }
