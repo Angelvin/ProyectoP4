@@ -111,7 +111,7 @@ while ($row=mysql_fetch_array($result)) {
                                             </div>
                                             <div class="row">
                                                 <div class="col-xs-6"><label>Contraseña</label></div>
-                                                <div class="col-xs-6"><input type="password " id="password" name="password"class="form-control"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15})" required/ ></div>
+                                                <div class="col-xs-6"><input type="text" id="password" name="password"class="form-control"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15})" required/ ></div>
                                                 <input type='hidden' value='1' name='Enviar' />
                                                 <input type='submit' class="btn btn-primary btn-lg" value='Guardar' />
                                             </div>

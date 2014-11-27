@@ -1,8 +1,4 @@
-
-	<?php
-
-
-
+<?php
 /**
  * clase para abrir una conexion a mysql server
  *
@@ -20,7 +16,4 @@ if (!($conexion = mysql_connect($servidor, $usuario, $password) or die('Oh!, par
 }
 else
     mysql_select_db($databaseName,$conexion) or die('Imposible acceder a base de datos!');
-
-
-
 ?>

@@ -26,7 +26,7 @@ $VVALOR=$_GET['idclie'];
 
   $sql="UPDATE estadoticket SET estado='$NOMBRE'  where  idestadoTicket=$VVALOR";
   $query=mysql_query($sql) or die(mysql_error());
- header("Location: idestadoTicket.php");
+ header("Location: estadoTicket.php");
   }else{
    
   }
