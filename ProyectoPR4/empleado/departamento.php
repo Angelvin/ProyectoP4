@@ -66,7 +66,7 @@ while ($row=mysql_fetch_array($result)) {
    <form action="insertdepa.php" method="POST">
   <div class="row">
   <div class="col-xs-6"><label>Nombre Departamento</label></div>
-  <div class="col-xs-6"><input type="text"  id="nombre"  name="nombre" class="form-control"  ></div>
+  <div class="col-xs-6"><input type="text"  id="nombre"  name="nombre" class="form-control" pattern="|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|"  required /  ></div>
 </div>
 
 <input type='hidden' value='1' name='Enviar' />

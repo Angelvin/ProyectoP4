@@ -73,27 +73,27 @@ while ($row=mysql_fetch_array($result)) {
                                 <form action="insertempleado.php" method="POST">
                                     <div class="row">
                                         <div class="col-xs-3 text-right"><label>nombre</label></div>
-                                        <div class="col-xs-7"><input type="text"  id="nombre"  name="nombre" class="form-control"  ></div>
+                                        <div class="col-xs-7"><input type="text"  id="nombre"  name="nombre" class="form-control" pattern="|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|"  required /  ></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-3 text-right"><label>segundo nombre</label></div>
-                                        <div class="col-xs-7"><input type="text" id="Snombre" name="Snombre"  class="form-control" ></div>
+                                        <div class="col-xs-7"><input type="text" id="Snombre" name="Snombre"  class="form-control"pattern="|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|"  required /  ></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-3 text-right"><label>apellido</label></div>
-                                        <div class="col-xs-6"><input type="text" name="apellido"  class="form-control" ></div>
+                                        <div class="col-xs-6"><input type="text" name="apellido"  class="form-control" pattern="|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|"  required / ></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-3 text-right"><label>apellido segundo</label></div>
-                                        <div class="col-xs-6"><input type="text" name="Sapellido"  class="form-control" ></div>
+                                        <div class="col-xs-6"><input type="text" name="Sapellido"  class="form-control"pattern="|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|"  required /  ></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-3 text-right"><label>telefono</label></div>
-                                        <div class="col-xs-6"><input type="text" name="telefono"  class="form-control" ></div>
+                                        <div class="col-xs-6"><input type="text" name="telefono"  class="form-control" pattern="[0-9]{8}$"  ></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-3 text-right"><label>Documento</label></div>
-                                        <div class="col-xs-6"><input type="text" name="documento"  class="form-control" ></div>
+                                        <div class="col-xs-6"><input type="text" name="documento"  class="form-control"  pattern="[0-9]"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-3 text-right" ><label>Departamento</label></div>
@@ -107,11 +107,11 @@ while ($row=mysql_fetch_array($result)) {
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="col-xs-6"><label>Usuario</label></div>
-                                                <div class="col-xs-6"><input type="text" id="usuario" name="usuario" class="form-control" ></div>
+                                                <div class="col-xs-6"><input type="text" id="usuario" name="usuario" class="form-control" pattern="^[A-z0-9]{3,15}$" required/ ></div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-xs-6"><label>Contraseña</label></div>
-                                                <div class="col-xs-6"><input type="text" id="password" name="password"class="form-control" ></div>
+                                                <div class="col-xs-6"><input type="text" id="password" name="password"class="form-control"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15})" required/ ></div>
                                                 <input type='hidden' value='1' name='Enviar' />
                                                 <input type='submit' class="btn btn-primary btn-lg" value='Guardar' />
                                             </div>
