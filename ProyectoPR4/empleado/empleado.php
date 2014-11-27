@@ -97,7 +97,7 @@ while ($row=mysql_fetch_array($result)) {
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-3 text-right" ><label>Departamento</label></div>
-                                        <div class="col-xs-6"> <select class="form-control" id="departamento" name="departamento" required><option>-seleccione-</option><?php include_once '../include/departamento.php'; ?></select> </div>
+                                        <div class="col-xs-6"> <select class="form-control" id="departamento" name="departamento" required><?php include_once '../include/departamento.php'; ?></select> </div>
                                     </div>
                                     <hr>
                                     <div class="panel panel-info">

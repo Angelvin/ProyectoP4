@@ -52,7 +52,7 @@ inner join ticket as tic on p.idpersona=tic.persona_idpersona
 inner join detalleticket as dtic on dtic.iddetalleTicket=tic.detalleTicket_iddetalleTicket
 inner join estadoticket as stic on stic.idestadoTicket=tic.estadoTicket_idestadoTicket
 inner join priorida as prio on prio.idpriorida=tic.priorida_idpriorida
-inner join problema as pro on pro.idproblema=tic.problema_idproblema where tic.fechaCreacion=CURDATE() and idempleado is null  group by d.iddepartamento ASC") ;
+inner join problema as pro on pro.idproblema=tic.problema_idproblema where  idempleado is null  group by d.iddepartamento ASC") ;
 while ($row=mysql_fetch_array($result)) {
 
 ?>

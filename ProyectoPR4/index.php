@@ -14,7 +14,7 @@ if (isset($_POST['action'])) {
             if ($valor==1) {
                 header("Location:empleado/console.php"); /* Si el usuario existe, direccionar a la pagina princial( catalogo) */
             }elseif ($valor==2) {
-                header("Location:inicio.php");
+                header("Location:cliente/ticket.php");
             }
         }
     } else {
@@ -91,7 +91,7 @@ if (isset($_POST['action'])) {
                 <fieldset>
                     <div class="form-group">
 
-                        <legend><center><h3>Login cliente</h3></center></legend>
+                        <legend><center><h3>Login </h3></center></legend>
                         <br>
                         <div class="form-group">
                             <label  class="col-lg-3 control-label" for="username">Username</label>
@@ -112,7 +112,7 @@ if (isset($_POST['action'])) {
                         </center>
                         <br>
                         <br>
-                        <a href="index.php">Cancel</a>
+                       
                         <br>
 
 
@@ -123,7 +123,7 @@ if (isset($_POST['action'])) {
             <div id="registrarse-container">
                 <h3><p class="text-center">¿Ya estas registrado?</p></h3>
                 <hr>
-                <h4><p class="text-center">Registrarse como Cliente</p></h4>
+                <h4><p class="text-center">Registrarse como Usuario</p></h4>
 
                 <p class="text-center">
                     <a href="registro.php">
