@@ -59,62 +59,67 @@ while ($row=mysql_fetch_array($result)) {
 <!-- Large modal -->
 
 
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-   
-   <h2>Crear Empleado</h2>
-   <form action="insertempleado.php" method="POST">
-  <div class="row">
-  <div class="col-xs-6"><label>nombre</label></div>
-  <div class="col-xs-6"><input type="text"  id="nombre"  name="nombre" class="form-control"  ></div>
-</div>
-<div class="row">
-  <div class="col-xs-6"><label>segundo nombre</label></div>
-  <div class="col-xs-6"><input type="text" id="Snombre" name="Snombre"  class="form-control" ></div>
-</div>
-<div class="row">
-  <div class="col-xs-6"><label>apellido</label></div>
-  <div class="col-xs-6"><input type="text" name="apellido"  class="form-control" ></div>
-</div>
-<div class="row">
-  <div class="col-xs-6"><label>apellido segundo</label></div>
-  <div class="col-xs-6"><input type="text" name="Sapellido"  class="form-control" ></div>
-</div>
-<div class="row">
-  <div class="col-xs-6"><label>telefono</label></div>
-  <div class="col-xs-6"><input type="text" name="telefono"  class="form-control" ></div>
-</div>
-<div class="row">
-  <div class="col-xs-6"><label>Documento</label></div>
-  <div class="col-xs-6"><input type="text" name="documento"  class="form-control" ></div>
-</div>
-<div class="row">
-  <div class="col-xs-6"><label>Departamento</label></div>
-  <div class="col-xs-6"> <select class="form-control" id="departamento" name="departamento" required><option>-seleccione-</option><?php include_once '../include/departamento.php'; ?></select> </div>
-</div>
-  </div>
-  <div class="panel panel-info">
-  <div class="panel-heading">
-    <h3 class="panel-title">Credenciales</h3>
-  </div>
-  <div class="panel-body">
-  <div class="row">
-  <div class="col-xs-6"><label>Usuario</label></div>
-  <div class="col-xs-6"><input type="text" id="usuario" name="usuario" class="form-control" ></div>
-</div>
-<div class="row">
-  <div class="col-xs-6"><label>Contraseña</label></div>
-  <div class="col-xs-6"><input type="text" id="password" name="password"class="form-control" ></div>
-  <input type='hidden' value='1' name='Enviar' />
-  <input type='submit' class="btn btn-primary btn-lg" value='Guardar' />
-</div>
+                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" style="width: 50% !important">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h2>Crear Empleado</h2>
+                            </div>
+                            <div class="modal-body">
+                                
 
-  </div>
-</div>
 
- 
-  </form>
+                                <form action="insertempleado.php" method="POST">
+                                    <div class="row">
+                                        <div class="col-xs-3 text-right"><label>nombre</label></div>
+                                        <div class="col-xs-7"><input type="text"  id="nombre"  name="nombre" class="form-control"  ></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-3 text-right"><label>segundo nombre</label></div>
+                                        <div class="col-xs-7"><input type="text" id="Snombre" name="Snombre"  class="form-control" ></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-3 text-right"><label>apellido</label></div>
+                                        <div class="col-xs-6"><input type="text" name="apellido"  class="form-control" ></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-3 text-right"><label>apellido segundo</label></div>
+                                        <div class="col-xs-6"><input type="text" name="Sapellido"  class="form-control" ></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-3 text-right"><label>telefono</label></div>
+                                        <div class="col-xs-6"><input type="text" name="telefono"  class="form-control" ></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-3 text-right"><label>Documento</label></div>
+                                        <div class="col-xs-6"><input type="text" name="documento"  class="form-control" ></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-3 text-right" ><label>Departamento</label></div>
+                                        <div class="col-xs-6"> <select class="form-control" id="departamento" name="departamento" required><option>-seleccione-</option><?php include_once '../include/departamento.php'; ?></select> </div>
+                                    </div>
+                                    <hr>
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Credenciales</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-xs-6"><label>Usuario</label></div>
+                                                <div class="col-xs-6"><input type="text" id="usuario" name="usuario" class="form-control" ></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-6"><label>Contraseña</label></div>
+                                                <div class="col-xs-6"><input type="text" id="password" name="password"class="form-control" ></div>
+                                                <input type='hidden' value='1' name='Enviar' />
+                                                <input type='submit' class="btn btn-primary btn-lg" value='Guardar' />
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </form>
     </div>
   </div>
 </div>

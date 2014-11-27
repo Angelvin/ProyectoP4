@@ -57,13 +57,14 @@ while ($row=mysql_fetch_array($result)) {
 
 <!-- Large modal -->
 
-
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-   
-   <h2>Crear Usuario</h2>
-   <form action="insertUsuario.php" method="POST">
+                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" style="width: 50% !important">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h2>Crear Usuario</h2>
+                            </div>
+                            <form action="insertUsuario.php" method="POST">
   <div class="row">
   <div class="col-xs-6"><label>nombre</label></div>
   <div class="col-xs-6"><input type="text"  id="nombre"  name="nombre"  class="form-control" pattern="|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|"  required / ></div>
