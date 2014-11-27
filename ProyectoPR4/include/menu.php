@@ -41,8 +41,10 @@
         session_start();
         include ("../include/conexion.php");
 if (!empty($_SESSION['userid'])) {
-    echo "Bienvenido ".$_SESSION['userid'];
-     echo '<a href="../logout.php" class="logout"><span class="glyphicon glyphicon-log-out"></span> Cerra Sesion</a>';
+    /*echo "Bienvenido ".$_SESSION['userid'];
+     echo '<a href="../logout.php" class="logout"><span class="glyphicon glyphicon-log-out"></span> Cerra Sesion</a>';*/
+      echo "<a href='#' class='dropdown-toggle' data-toggle='dropdown'>Bienvenido <b>". $_SESSION['userid']. "</b><span class='caret'></span></a>";
+                        echo "<ul class='dropdown-menu' role='menu'><form><li><a href='../logout.php' class='logout'><span class='glyphicon glyphicon-log-out'></span> Cerra Sesion</a></li></form></ul>";
 } else {
     //header("Location: logon.php"); /* Redirect browser */
     header("Location: ../index.php"); /* Redirect browser */
