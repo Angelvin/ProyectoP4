@@ -1,70 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-  <script src="https://code.jquery.com/jquery.js"  type="text/javascript"></script>
-	<LINK rel="stylesheet" HREF="../../ProyectoPR4/css/bootstrap-3.2.0-dist/css/bootstrap.css"  >
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <LINK rel="stylesheet" HREF="../ProyectoPR4/css/bootstrap-3.2.0-dist/css/bootstrap.css"  >
+    <?php
+    include ("include/conexion.php");
+    if (isset($_POST['Enviar'])) {
+        $valor=1;
+        $sql="INSERT INTO login(usuario, password, rol_idrol) values ('{$_POST['usuario']}','{$_POST['password']}', '$valor')";
 
 
-	<title>Document</title>
+        $query=mysql_query($sql) or die(mysql_error());
+        $id = mysql_insert_id($conexion);
+        if ($id>0) {
+            # regreso de id de insersion en la tabla
+            $sql2="INSERT INTO persona(nombre,Snombre,apellido,Sapellido,telefono,documento, login_idlogin,departamento_iddepartamento)  VALUES('{$_POST['nombre']}','{$_POST['Snombre']}','{$_POST['apellido']}','{$_POST['Sapellido']}','{$_POST['telefono']}','{$_POST['documento']}','$id','$valor')";
+            echo "Registro completo";
+            mysql_query($sql2) or die(mysql_error());
+        } else {
+            # error
+            echo "No Registrado ....Prueba";
+        }
+
+
+    } else {
+        # code...
+        // echo "No registrado";
+    }
+    ?>
 </head>
 <body>
-<?php
-include("../include/menu.php");
-?>
 <div class="row">
- <div class="col-md-2">
-   <?php
-include("../include/menulateral.php");
+    <a href="index.php" style="font-size: 24px; margin-left: 50px;">Volver a inicio</a>
+</div>
+<div class="row">
+    <div class="col-md-6 col-lg-offset-3">
+        <br>
+        <div class="panel panel-info">
 
-    ?>
-<?php
-include("../include/conexion.php");
-?>
- </div>
-  <div class="col-md-8">
-  	<div class="panel panel-default">
-  <div class="panel-heading">Usuario</div>
-  <div class="panel-body">
-  <div><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Crear Usuario</button></div>
-  <table class="table">
-  
-  <?php 
-
-$result= mysql_query("select  p.idpersona,p.nombre,p.Snombre, p.apellido, p.Sapellido, p.telefono,p.documento from persona as p inner join login as l on p.login_idlogin=l.idlogin inner join rol as r on l.rol_idrol=r.idrol where r.idrol=2");
-while ($row=mysql_fetch_array($result)) {
-
-?>
-<tr>
-
-  <td><?php echo$row["nombre"]  ?></td>
-  <td><?php echo$row["Snombre"]  ?></td>
-  <td><?php echo$row["apellido"]  ?></td>
-  <td><?php echo$row["Sapellido"]  ?></td>
-  <td><?php echo$row["telefono"]  ?></td>
-   <td><?php echo$row["documento"]  ?></td>
- <td><form  id="updateCita" method="GET" action="updateusuario.php ">
-<input type="hidden" name="codigo"  id="codigo" value="<?php echo$row["idpersona"]  ?>" >
-<input type="submit" name="cmdguardar" class="btn btn-link" value="Consulta" POST="SUMIT"/>
-</form></td> 
-</tr>
-<?php
-} 
-?>
-</table>
-<!-- Small modal -->
-
-
-<!-- Large modal -->
-
-                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" style="width: 50% !important">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                <h2>Crear Usuario</h2>
-                            </div>
-                            <form action="insertUsuario.php" method="POST">
+            <div class=" panel-heading">Registo</div>
+            <div class="panel-body">
+                         <form action="../insertUsuario.php" method="POST">
   <div class="row">
   <div class="col-xs-6"><label>nombre</label></div>
   <div class="col-xs-6"><input type="text"  id="nombre"  name="nombre"  class="form-control" pattern="|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|"  required / ></div>
@@ -115,14 +92,9 @@ while ($row=mysql_fetch_array($result)) {
 
  
   </form>
-    </div>
-  </div>
+        </div></div>
+
 </div>
-  </div>
-  
-</div>
-  </div>
-</div>
-   <script src="../../ProyectoPR4/css/bootstrap-3.2.0-dist/js/bootstrap.min.js" type="text/javascript"></script>
+
 </body>
 </html>
