@@ -93,7 +93,7 @@ while ($row=mysql_fetch_array($result)) {
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-3 text-right"><label>Documento</label></div>
-                                        <div class="col-xs-6"><input type="text" name="documento"  class="form-control"  pattern="[0-9]"></div>
+                                        <div class="col-xs-6"><input type="text" name="documento"  class="form-control" required /></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-3 text-right" ><label>Departamento</label></div>

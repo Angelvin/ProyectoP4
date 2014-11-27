@@ -41,7 +41,7 @@
 
             <div class=" panel-heading">Registo</div>
             <div class="panel-body">
-                         <form action="../insertUsuario.php" method="POST">
+                         <form action="empleado/insertUsuario.php" method="POST">
   <div class="row">
   <div class="col-xs-6"><label>nombre</label></div>
   <div class="col-xs-6"><input type="text"  id="nombre"  name="nombre"  class="form-control" pattern="|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|"  required / ></div>
@@ -64,11 +64,11 @@
 </div>
 <div class="row">
   <div class="col-xs-6"><label>Documento</label></div>
-  <div class="col-xs-6"><input type="text" name="documento"  class="form-control" pattern="[0-9]"/></div>
+  <div class="col-xs-6"><input type="text" name="documento"  class="form-control" required /></div>
 </div>
 <div class="row">
   <div class="col-xs-6"><label>Departamento</label></div>
-  <div class="col-xs-6"> <select class="form-control" name="departamento" required><option>-seleccione-</option><?php include_once '../include/departamento.php'; ?></select> </div>
+  <div class="col-xs-6"> <select class="form-control" name="departamento" required><option>-seleccione-</option><?php include_once 'include/departamento.php'; ?></select> </div>
 </div>
   </div>
   <div class="panel panel-info">
